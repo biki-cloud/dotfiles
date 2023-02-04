@@ -1,0 +1,6 @@
+noremap <S-h> 0
+noremap <S-l> $
+inoremap <silent> jj <ESC>
+
+set hlsearch
+set ignorecase
