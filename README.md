@@ -1,2 +1,2 @@
-### macのターミナル設定
+macのターミナル設定
 - brew install zsh-autosuggestions
