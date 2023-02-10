@@ -1,7 +1,7 @@
 macのターミナル設定
 - homebrewをインストール
 - xcodeをインストール
-- brew install zsh-autosuggestions
+- [zsh-autosuggestions](https://zenn.dev/luvmini511/articles/8d427e1faa089f)をインストール
 - [sshキーをgithubに登録](https://qiita.com/takayamag/items/9818f9b5cb1fad77e583)
 - vscodeをインストール
 - chromeをインストール
