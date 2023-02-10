@@ -11,3 +11,4 @@ macのターミナル設定
   - Googleアカウントにログイン
 - [ターミナルのテーマ](https://qiita.com/obake_fe/items/c2edf65de684f026c59c)
 - [vim-plugのインストール](https://qiita.com/kouichi_c/items/e19ccf94b8e5ab6ed18e)
+- [m1マックは連続入力できない](https://ryo-blog.lsv.jp/archives/20210422/108/)
