@@ -1,0 +1,19 @@
+Host github
+ User git
+ HostName github.com
+ IdentityFile ~/.ssh/id_rsa
+
+ # common
+Host *
+ UseKeychain yes
+ AddKeysToAgent yes
+
+Host ec2
+ HostName ec2-18-190-155-231.us-east-2.compute.amazonaws.com
+ User ec2-user
+ IdentityFile ~/Desktop/aws/mykey.pem
+
+Host lightsail-bot
+  HostName 54.249.178.171
+  User ubuntu
+  IdentityFile ~/.ssh/lightsail.pem

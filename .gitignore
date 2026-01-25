@@ -1,0 +1,19 @@
+# バックアップファイル
+*.backup.*
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 一時ファイル
+*.swp
+*.swo
+*~
+
+# ログファイル
+*.log
+
+# ディスク使用状況レポート
+disk-management/disk-usage-report-*.txt
