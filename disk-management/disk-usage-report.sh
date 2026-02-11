@@ -132,6 +132,31 @@ echo ""
     ps aux | sort -rk 4 | head -11
     echo ""
 
+    # 14. まとめ
+    log_section "まとめ"
+    DATA_VOLUME="/"
+    [ -d /System/Volumes/Data ] && DATA_VOLUME="/System/Volumes/Data"
+    echo "【データボリューム】"
+    df -h "$DATA_VOLUME" 2>/dev/null | tail -1 | awk '{
+        gsub(/%/, "", $5);
+        printf "  使用率: %s  使用: %s  空き: %s  合計: %s\n", $5"%", $3, $4, $2
+    }' || echo "  取得できませんでした"
+    echo ""
+    echo "【ホームディレクトリ】"
+    du -sh ~ 2>/dev/null | awk '{print "  合計: " $1}' || echo "  取得できませんでした"
+    echo ""
+    echo "【状態】"
+    CAP=$(df "$DATA_VOLUME" 2>/dev/null | tail -1 | awk '{gsub(/%/, ""); print $5}')
+    if [ -n "$CAP" ] && [ "$CAP" -ge 90 ] 2>/dev/null; then
+        echo "  ⚠ 空き容量が少なくなっています（${CAP}%）。クリーンアップの実行を検討してください。"
+    elif [ -n "$CAP" ] && [ "$CAP" -ge 75 ] 2>/dev/null; then
+        echo "  △ 余裕はありますが、定期的なクリーンアップを推奨します（${CAP}%）。"
+    else
+        echo "  ○ 十分な空き容量があります（${CAP}%）。"
+    fi
+    echo ""
+    echo "  ※ クリーンアップは ./scripts/cleanup.sh で実行できます（--dry-run で事前確認可能）"
+    echo ""
     echo "=========================================="
     echo "レポート終了"
     echo "=========================================="
